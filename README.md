@@ -67,7 +67,7 @@ npm run dev
 - **SQL Database Integration:** Implementing **SQLite & SQLAlchemy** to cache planet data locally.
 - **User Accounts:** Allowing users to create accounts and save their favorite NASA photos to a personal collection.
 
-## 🔑 API Reference
+## API Reference
 
 This project uses the **NASA Open API**.
 You can get your own API Key at [api.nasa.gov](https://api.nasa.gov/).
@@ -76,5 +76,5 @@ To use your own key, update the `NASA_API_KEY` variable in `backend/main.py`.
 
 ---
 
-## 👩‍💻 Author
+## Author
 **v0yenka**
