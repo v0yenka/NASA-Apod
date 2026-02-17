@@ -1,7 +1,8 @@
 # NASA APOD Project
 
-**NASA APOD Project** is a modern full-stack web application that allows users to explore the universe using data directly from NASA and Wikipedia. The project combines a high-performance Python backend with an interactive React frontend, featuring a persistent database for caching planetary data.
+**NASA APOD Project** is a modern full-stack web project that allows users to explore the universe using data directly from NASA and Wikipedia. The app combines a high-performance Python backend with an interactive React frontend, featuring a persistent database for caching planetary data.
 
+![Demo](assets/demo.gif)
 
 ## Key Features
 
