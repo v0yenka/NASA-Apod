@@ -1,0 +1,184 @@
+/* Basic Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: #1a1a2e;
+  color: #e0e0e0;
+}
+
+/* App Layout */
+.app-layout { min-height: 100vh; }
+.main-content {
+  padding: 20px;
+  padding-top: 80px; 
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Button for opening the sidebar */
+.hamburger-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(45deg, #ff00cc, #333399);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 2000;
+  box-shadow: 0 0 15px rgba(255, 0, 204, 0.4);
+  transition: transform 0.2s;
+}
+.hamburger-btn:hover { transform: scale(1.1); }
+
+/* Stylling the sidebar */
+.sidebar {
+  position: fixed;
+  left: -320px;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background-color: #0f0f1b;
+  box-shadow: 5px 0 20px rgba(0,0,0,0.8);
+  transition: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 1500;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #333;
+}
+.sidebar.open { left: 0; }
+
+/* Site name and close button */
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #333;
+}
+
+.brand-logo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  
+  /* The gradient text effect */
+  background: linear-gradient(90deg, #ff00cc, #333399); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* Additional shadow for better visibility */
+  filter: drop-shadow(0 0 5px rgba(255, 0, 204, 0.5));
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: #666;
+  cursor: pointer;
+  transition: 0.3s;
+  line-height: 1;
+}
+.close-btn:hover { color: #ff00cc; transform: rotate(90deg); }
+
+/* Links in the sidebar */
+.sidebar-links { list-style: none; }
+.sidebar-links li { margin-bottom: 15px; }
+.sidebar-links a {
+  display: block;
+  padding: 15px;
+  color: #a0a0a0;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  transition: 0.3s;
+  border: 1px solid transparent;
+}
+.sidebar-links a:hover {
+  background-color: #1a1a2e;
+  border-color: #333399;
+  color: white;
+  padding-left: 20px;
+}
+.sidebar-links a.active {
+  background: linear-gradient(90deg, #333399, transparent);
+  color: white;
+  border-left: 4px solid #ff00cc;
+}
+
+.overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8); z-index: 1000;
+  backdrop-filter: blur(3px); /* Adding a blur effect for better focus on the sidebar */
+}
+
+/* Photo of the day styling */
+.apod-container h1 { text-align: center; margin-bottom: 30px; color: #e94560; display: none; }
+
+.apod-layout {
+  display: flex; gap: 30px; background-color: #16213e; padding: 30px;
+  border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); border: 1px solid #333;
+}
+.apod-sidebar {
+  flex: 0 0 220px; border-right: 1px solid #333; padding-right: 20px;
+}
+.date-picker {
+  width: 100%; padding: 12px; margin-top: 15px;
+  background-color: #0f0f1b; border: 1px solid #333399; color: white; border-radius: 8px;
+  font-size: 1rem;
+}
+.apod-content { flex: 1; }
+.content-flex { display: flex; gap: 30px; align-items: flex-start; }
+.media-container { flex: 3; }
+.text-container {
+  flex: 2; background-color: #0f0f1b; padding: 25px; border-radius: 10px; border: 1px solid #333;
+}
+.main-img { width: 100%; border-radius: 10px; border: 1px solid #333; }
+.explanation-text { font-size: 0.95rem; line-height: 1.7; color: #ccc; text-align: justify; }
+
+/* Planets section styling */
+.planets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+.planet-card {
+  background: #16213e;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s;
+  border: 1px solid #333;
+}
+.planet-card:hover {
+  transform: translateY(-10px);
+  border-color: #ff00cc;
+  box-shadow: 0 0 20px rgba(255, 0, 204, 0.2);
+}
+.planet-img {
+  width: 160px; height: 160px; object-fit: cover; border-radius: 50%;
+  margin-bottom: 20px; border: 4px solid #0f0f1b;
+  box-shadow: 0 0 25px rgba(0,0,0,0.7);
+}
+.planet-card h3 { color: white; margin-bottom: 10px; font-size: 1.4rem; }
+.planet-card p { font-size: 0.9rem; color: #aaa; line-height: 1.5; }
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .apod-layout, .content-flex { flex-direction: column; }
+  .apod-sidebar { width: 100%; border-right: none; margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 20px;}
+}
+
+/* Ensuring the section titles are always above the content */
+.content-box h2, 
+.planets-grid h2 { 
+  position: relative; 
+  z-index: 100;
+  margin-bottom: 40px;
+}
