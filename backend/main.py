@@ -13,7 +13,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-NASA_API_KEY = "DEMO_KEY" # Use your own API key
+NASA_API_KEY = "WIYTGSm8Q18M7eXNEdRullrhs4o5RpiId0TrjhuW" # Use your own API key
 
 wikipedia.set_lang("pl")
 
