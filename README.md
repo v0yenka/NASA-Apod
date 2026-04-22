@@ -14,10 +14,7 @@
 - **Smart Planet Encyclopedia:**
   - A dynamic collection of information about the Solar System.
   - **Automated Data Fetching:** Planet descriptions are automatically fetched from Wikipedia and summarized using Python.
-
-- **User Experience:**
-  - Responsive design with a collapsible sidebar navigation.
-  - Smooth transitions and interactive hover effects.
+  - Furthermore, encyclopedia is made by using mySQL database.
 
 ## Tech Stack
 
@@ -65,7 +62,7 @@ npm run dev
 ```
 
 ## Incoming Updates
-- **SQL Database Integration:** Implementing **SQLite & SQLAlchemy** to cache planet data locally.
+- ~~**SQL Database Integration:** Implementing **SQLite & SQLAlchemy** to cache planet data locally.~~ **Done!**
 - **User Accounts:** Allowing users to create accounts and save their favorite NASA photos to a personal collection.
 
 ## API Reference
